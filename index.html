@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Situs pribadi Calvin, Life Planner AIA di Medan. Verifikasi, literasi proteksi, dan pertanyaan yang bisa Anda ajukan kepada siapa pun.">
+<title>Calvin — Life Planner AIA Medan</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<style>
+:root{
+  --bg:#FDF5F5;
+  --fg:#2D2A26;
+  --muted:#8A7E72;
+  --accent:#800020;
+  --accentSoft:#F5E0E0;
+  --accentWarm:#FAF0F0;
+  --card:#FFFFFF;
+  --border:#E8D5D5;
+  --ok:#7BAE7F;
+  --warn:#D4A853;
+  --radius:20px;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--fg);line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:440px;margin:0 auto;padding:0 20px}
+
+/* ===== HEADER / HERO ===== */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(180deg,var(--accentWarm) 0%,var(--bg) 100%);
+}
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  width:100px;height:100px;border-radius:50%;
+  background:var(--card);
+  margin:0 auto 24px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:40px;color:var(--accent);font-weight:600;
+  border:3px solid var(--accent);
+  box-shadow:0 4px 16px rgba(128,0,32,.12);
+}
+.hero h1{
+  font-family:var(--serif);
+  font-size:2rem;
+  font-weight:600;
+  margin-bottom:8px;
+  letter-spacing:-.02em;
+}
+.hero-role{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  font-size:.75rem;
+  padding:5px 18px;
+  border-radius:20px;
+  margin:12px 0 16px;
+  letter-spacing:.03em;
+  font-weight:500;
+}
+.hero-tagline{
+  color:var(--muted);
+  font-size:.95rem;
+  font-style:italic;
+  max-width:300px;
+  margin:0 auto 32px;
+}
+.hero-badges{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:32px;
+}
+.hero-badge{
+  font-size:.7rem;
+  color:var(--muted);
+  border:1px solid var(--border);
+  padding:4px 12px;
+  border-radius:12px;
+  background:var(--card);
+}
+.hero-cta{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:14px 36px;
+  border-radius:50px;
+  font-weight:600;
+  font-size:1rem;
+  box-shadow:0 4px 12px rgba(128,0,32,.25);
+  transition:transform .15s ease;
+}
+.hero-cta:hover{
+  background:#6A001A;
+  text-decoration:none;
+  transform:translateY(-1px);
+}
+.hero-scroll{
+  margin-top:40px;
+  font-size:.75rem;
+  color:var(--muted);
+  animation:bounce 2s infinite;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(6px)}
+}
+
+/* ===== BODY ===== */
+.body-section{
+  padding:48px 0;
+}
+.sec-title{
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--accent);
+  margin-bottom:16px;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.sec-title::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border);
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  margin-bottom:12px;
+  box-shadow:0 1px 3px rgba(0,0,0,.03);
+}
+
+/* Verifikasi */
+.verify-item{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:12px 0;
+  border-bottom:1px solid var(--border);
+}
+.verify-item:last-child{border-bottom:none}
+.verify-icon{font-size:1.25rem;flex-shrink:0;width:30px;text-align:center}
+.verify-text strong{display:block;font-size:.9rem}
+.verify-text span{font-size:.8rem;color:var(--muted)}
+
+/* Cara Verifikasi */
+.step-item{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:12px 0;
+  border-bottom:1px solid var(--border);
+}
+.step-item:last-child{border-bottom:none}
+.step-num{
+  font-family:var(--serif);
+  font-size:1.3rem;
+  color:var(--accent);
+  font-weight:600;
+  flex-shrink:0;
+  width:28px;
+  line-height:1.3;
+}
+.step-text strong{display:block;font-size:.9rem}
+.step-text span{font-size:.8rem;color:var(--muted)}
+
+/* 10 Pertanyaan */
+.q-item{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+}
+.q-item:last-child{border-bottom:none}
+.q-num{
+  font-family:var(--serif);
+  font-size:1.4rem;
+  color:var(--accent);
+  font-weight:600;
+  flex-shrink:0;
+  width:30px;
+  line-height:1.3;
+}
+.q-text{font-size:.92rem}
+.q-why{
+  font-size:.78rem;
+  color:var(--muted);
+  margin-top:4px;
+  font-style:italic;
+}
+
+/* Free Look */
+.free-look{
+  background:var(--accentSoft);
+  border-radius:var(--radius);
+  padding:20px;
+  margin-bottom:12px;
+}
+.free-look h3{
+  font-family:var(--serif);
+  font-size:1.1rem;
+  margin-bottom:8px;
+  color:var(--accent);
+}
+.free-look p{font-size:.88rem;line-height:1.7}
+.free-look .note{
+  font-size:.78rem;
+  color:var(--muted);
+  margin-top:10px;
+  font-style:italic;
+}
+
+/* Glosarium */
+.gloss{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+.gloss-item{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:0 1px 3px rgba(0,0,0,.03);
+}
+.gloss-item strong{
+  display:block;
+  font-size:.9rem;
+  margin-bottom:4px;
+  color:var(--accent);
+}
+.gloss-item span{font-size:.8rem;color:var(--muted)}
+
+/* Bacaan Resmi */
+.reading-item{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+}
+.reading-item:last-child{border-bottom:none}
+.reading-icon{font-size:1.2rem;flex-shrink:0;width:28px;text-align:center}
+.reading-text strong{display:block;font-size:.9rem}
+.reading-text span{font-size:.8rem;color:var(--muted)}
+.reading-text a{font-size:.8rem;color:var(--accent);font-weight:500}
+.reading-type{
+  display:inline-block;
+  font-size:.65rem;
+  padding:2px 8px;
+  border-radius:8px;
+  margin-bottom:4px;
+  font-weight:500;
+}
+.reading-type.edukasi{background:var(--accentSoft);color:var(--accent)}
+.reading-type.produk{background:#E8F0F6;color:#2D5F8A}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:var(--accentWarm);
+  padding:48px 0 32px;
+  text-align:center;
+}
+.footer-cta{
+  display:inline-block;
+  background:#25D366;
+  color:#fff;
+  padding:16px 40px;
+  border-radius:50px;
+  font-weight:600;
+  font-size:1.05rem;
+  width:100%;
+  max-width:280px;
+  box-shadow:0 4px 12px rgba(37,211,102,.3);
+  margin-bottom:12px;
+}
+.footer-cta:hover{background:#1EBE5B;text-decoration:none}
+.footer-note{
+  font-size:.75rem;
+  color:var(--muted);
+  margin-bottom:24px;
+}
+.footer-badges{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+.footer-badge{
+  font-size:.68rem;
+  color:var(--muted);
+  border:1px solid var(--border);
+  padding:3px 10px;
+  border-radius:12px;
+  background:var(--card);
+}
+.footer-disclaimer{
+  font-size:.72rem;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  padding-top:20px;
+  margin-top:20px;
+  max-width:360px;
+  margin-left:auto;
+  margin-right:auto;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER / HERO ===== -->
+<section class="hero">
+<img src="assets/foto-calvin.jpg" alt="Calvin - Life Planner AIA" class="hero-avatar">
+  <h1>Calvin</h1>
+  <span class="hero-role">Life Planner · AIA · Medan</span>
+  <p class="hero-tagline">"Lindungilah Harta Paling Berharga Anda, Yaitu Kesehatanmu."</p>
+  <div class="hero-badges">
+    <span class="hero-badge">Agent Code: 08878752</span>
+    <span class="hero-badge">SGA MDN STARLIGHT</span>
+  </div>
+  <a href="#body" class="hero-cta">Pelajari Lebih Lanjut ↓</a>
+  <div class="hero-scroll">Scroll untuk melihat isi</div>
+</section>
+
+<!-- ===== BODY ===== -->
+<div class="wrap" id="body">
+
+  <section class="body-section" id="verifikasi">
+    <div class="sec-title">Verifikasi & Transparansi</div>
+    <div class="card">
+      <div class="verify-item">
+        <div class="verify-icon">📋</div>
+        <div class="verify-text">
+          <strong>Agent Code: 08878752</strong>
+          <span>Terdaftar di AIA Financial Indonesia</span>
+        </div>
+      </div>
+      <div class="verify-item">
+        <div class="verify-icon">🏢</div>
+        <div class="verify-text">
+          <strong>SGA MDN STARLIGHT</strong>
+          <span>Agency resmi AIA Medan</span>
+        </div>
+      </div>
+      <div class="verify-item">
+        <div class="verify-icon">📞</div>
+        <div class="verify-text">
+          <strong>Call Center AIA: 1500 980</strong>
+          <span>Silakan telepon untuk verifikasi</span>
+        </div>
+      </div>
+      <div class="verify-item">
+        <div class="verify-icon">📍</div>
+        <div class="verify-text">
+          <strong>AIA Center Medan — Lippo Plaza Lt. 9</strong>
+          <span>Silakan datang dan tanyakan nama saya</span>
+        </div>
+      </div>
+      <div class="verify-item">
+        <div class="verify-icon">⏳</div>
+        <div class="verify-text">
+          <strong>Lisensi AAJI & STTD OJK</strong>
+          <span>Ditampilkan setelah dokumen terbit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="body-section" id="cara-verifikasi">
+    <div class="sec-title">Cara Memverifikasi Agen Asuransi</div>
+    <div class="card">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Telepon Call Center AIA 1500 980</strong>
+          <span>Sebutkan nama agen, tanyakan apakah terdaftar</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Cek di situs resmi AIA</strong>
+          <span>Fitur "Find an Agent" di aia-financial.co.id</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Minta Kartu Identitas Agen</strong>
+          <span>Wajib dibawa, berisi logo dan nomor lisensi</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <strong>Datang ke AIA Center Medan</strong>
+          <span>Lippo Plaza Lt. 9, Jl. Imam Bonjol No. 6 — tanyakan langsung</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">5</div>
+        <div class="step-text">
+          <strong>Cek QR STTD OJK</strong>
+          <span>Setelah terbit — scan untuk memastikan lisensi aktif</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="body-section" id="pertanyaan">
+    <div class="sec-title">10 Pertanyaan untuk Agen Mana Pun — Termasuk Saya</div>
+    <div class="card">
+      <div class="q-item">
+        <div class="q-num">1</div>
+        <div class="q-text">Apa nama lengkap Anda dan di agency mana Anda bekerja?, Apakah Anda punya kartu nama resmi?
+          <div class="q-why">→ Ya saya punya kartu nama resmi, nama saya Calvin, dengan kode agen 08878752, saya bergabung dalam agency SGA MDN STARLIGHT.</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">2</div>
+        <div class="q-text">Apa yang terjadi kalau saya tidak puas dengan layanan Anda?
+          <div class="q-why">→ Hubungi call center AIA 1500 980 atau agency SGA MDN STARLIGHT.</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">3</div>
+        <div class="q-text">Bagaimana kalau saya pindah kota?, Apakah Anda bisa bantu klaim?
+          <div class="q-why">→ Ya, klaim tetap akan bisa dilakukan dengan rekanan rumah sakit pada kota baru anda, Bahkan sampai dengan luar negri sekalipun akan saya bantu proses klaim anda.</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">4</div>
+        <div class="q-text">Seberapa lama Anda sudah jadi Life Planner?
+          <div class="q-why">→ Pengalaman penting, tapi integritas dan kejujuran lebih penting. Saya sudah menjadi Life Planner sejak Oktober 2026.</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">5</div>
+        <div class="q-text">Kalau saya beli polis, ke mana saya bayar — ke perusahaan atau ke Anda?
+          <div class="q-why">→ Premi dibayar ke perusahaan, bukan ke agen pribadi.</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">6</div>
+        <div class="q-text">Apakah premi bisa naik di kemudian hari?
+          <div class="q-why">→ Untuk produk tradisional, premi biasanya tetap selama masa polis, Akan tetapi untuk produk kesehatan biasanya akan ada kenaikan karena biaya inflasi rumah sakit.</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">7</div>
+        <div class="q-text">Apa masa free look, dan bagaimana cara kerjanya?
+          <div class="q-why">→ Masa untuk mempelajari polis dan membatalkan kalau tidak sesuai.</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">8</div>
+        <div class="q-text">Produk apa yang paling cocok untuk keluarga muda?
+          <div class="q-why">→ Tergantung kebutuhan. Perlu analisis lebih lanjut dulu sebelum bisa saya rekomendasi.</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">9</div>
+        <div class="q-text">Bagaimana Anda membandingkan produk AIA dengan perusahaan lain?
+          <div class="q-why">→ Saya tidak bisa membandingkan tentang produk dari perusahaan lain karena saya tidak memiliki pengetahuan mengenai produk mereka.</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">10</div>
+        <div class="q-text">"Apa yang Anda lakukan kalau saya membatalkan polis setelah free look?"
+          <div class="q-why">→ Saya akan menanyakan apa yang bikin Anda tidak cocok? Kalau soal budget, bisa kita cek opsi lain. Kalau memang tidak cocok setelah semua opsi saya coba, saya bantu proses pembatalan preminya." .</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="body-section" id="free-look">
+    <div class="sec-title">Masa Free Look</div>
+    <div class="free-look">
+      <h3>Apa itu Masa Free Look?</h3>
+      <p>Polis asuransi jiwa di Indonesia memberi Anda masa untuk mempelajari polis setelah diterima — biasa disebut <strong>masa free look</strong>. Dalam masa ini, Anda bisa membatalkan polis kalau ketentuannya tidak sesuai dengan yang Anda harapkan.</p>
+      <p class="note">Panjang masanya tertulis di polis dan di RIPLAY produk yang Anda pilih. Saya akan tunjukkan bagian itu sebelum Anda menandatangani apa pun.</p>
+    </div>
+  </section>
+
+  <section class="body-section" id="glosarium">
+    <div class="sec-title">Glosarium Proteksi</div>
+    <div class="gloss">
+      <div class="gloss-item"><strong>Premi</strong><span>Uang yang Anda bayar rutin untuk menjaga polis aktif.</span></div>
+      <div class="gloss-item"><strong>Polis</strong><span>Dokumen perjanjian resmi antara Anda dan perusahaan asuransi.</span></div>
+      <div class="gloss-item"><strong>Manfaat</strong><span>Apa yang dibayarkan perusahaan ketika klaim disetujui.</span></div>
+      <div class="gloss-item"><strong>Pengecualian</strong><span>Kondisi yang TIDAK dibayar polis. Ini wajib Anda baca.</span></div>
+      <div class="gloss-item"><strong>Free Look</strong><span>Masa untuk mempelajari polis setelah Anda terima dan membatalkan kalau tidak sesuai.</span></div>
+      <div class="gloss-item"><strong>Pertanggungan</strong><span>Risiko yang dilindungi — misalnya kematian, sakit kritis, atau kecelakaan.</span></div>
+      <div class="gloss-item"><strong>Nilai Tunai</strong><span>Sisa uang yang bisa Anda ambil jika polis berakhir atau Anda batalkan.</span></div>
+      <div class="gloss-item"><strong>Klaim</strong><span>Permohonan pembayaran ke perusahaan asuransi ketika risiko terjadi.</span></div>
+    </div>
+  </section>
+
+  <section class="body-section" id="bacaan-resmi">
+    <div class="sec-title">Bacaan Resmi dari AIA</div>
+    <div class="card" id="articles-container">
+      <!-- Articles rendered by JavaScript -->
+    </div>
+    <p style="font-size:.75rem;color:var(--muted);margin-top:8px;font-style:italic;">Catatan: Tautan di atas mengarah ke situs resmi AIA. Di bagian bawah halaman, ada nama dan nomor saya.</p>
+  </section>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <a href="https://wa.me/628218331654" class="footer-cta">💬 Hubungi via WhatsApp</a>
+    <p class="footer-note">Atau datang langsung ke AIA Center Medan, Lippo Plaza Lt. 9</p>
+    <div class="footer-badges">
+      <span class="footer-badge">Situs pribadi</span>
+      <span class="footer-badge">Bukan situs resmi AIA</span>
+    </div>
+    <div class="footer-disclaimer">
+      Situs ini adalah situs pribadi Calvin sebagai Life Planner AIA di Medan. Bukan situs resmi AIA Financial Indonesia. Segala informasi di sini bersifat edukatif dan bukan nasihat keuangan. Untuk produk dan layanan asuransi, silakan hubungi call center AIA 1500 980 atau kunjungi aia-financial.co.id.
+    </div>
+  </div>
+</footer>
+
+<!-- ===== ARTICLES CONFIG ===== -->
+<script src="articles.js"></script>
+<script>
+(function() {
+  var container = document.getElementById('articles-container');
+  if (!container || typeof articles === 'undefined') return;
+
+  articles.forEach(function(article) {
+    var item = document.createElement('div');
+    item.className = 'reading-item';
+
+    var icon = document.createElement('div');
+    icon.className = 'reading-icon';
+    icon.textContent = '📖';
+
+    var text = document.createElement('div');
+    text.className = 'reading-text';
+
+    var type = document.createElement('span');
+    type.className = 'reading-type ' + article.type;
+    type.textContent = article.type === 'edukasi' ? 'Edukasi' : 'Produk';
+
+    var title = document.createElement('strong');
+    title.textContent = article.title;
+
+    var summary = document.createElement('span');
+    summary.textContent = article.summary;
+
+    var link = document.createElement('a');
+    link.href = article.link;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.textContent = 'Baca di situs AIA →';
+
+    text.appendChild(type);
+    text.appendChild(title);
+    text.appendChild(summary);
+    text.appendChild(link);
+
+    item.appendChild(icon);
+    item.appendChild(text);
+    container.appendChild(item);
+  });
+})();
+</script>
+
+</body>
+</html>
