@@ -1,40 +1,76 @@
 #!/usr/bin/env python3
-"""Audit mingguan untuk tanyacalvin.com — tanpa LLM."""
-import subprocess, pathlib, time, sys
+"""Audit mingguan untuk tanyacalvin.com — tanpa LLM (cron no_agent=True).
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+Script ini residing di ~/.hermes/scripts/, jadi root repo HARUS dicari,
+tidak boleh diasumsikan dari lokasi script.
+"""
+import subprocess
+import pathlib
+import sys
+import time
 
-def git_last_commit():
+SCRIPT_DIR = pathlib.Path(__file__).resolve().parent
+
+
+def find_repo_root():
+    """Cari root repo tanyacalvin: prefer cwd (cron workdir), lalu lokasi script."""
+    candidates = [pathlib.Path.cwd(), SCRIPT_DIR.parent, SCRIPT_DIR.parent.parent]
+    for c in candidates:
+        if (c / "tools" / "seo_check.py").exists() and (c / "index.html").exists():
+            return c
+    return pathlib.Path.cwd()
+
+
+ROOT = find_repo_root()
+
+ARTICLE_FOLDERS = [
+    "tabungan-masa-tua", "warisan-anak", "dana-pendidikan-anak",
+    "dana-kuliah-anak", "kesehatan", "masuk-rumah-sakit",
+]
+
+
+def git_last_commit_ts():
     try:
         out = subprocess.check_output(
-            ["git", "log", "-1", "--pretty=format:%ct", "--date=unix"], cwd=ROOT, text=True
+            ["git", "log", "-1", "--pretty=format:%ct"], cwd=ROOT, text=True
         ).strip()
         return int(out) if out else 0
     except Exception:
         return 0
 
+
 def count_articles():
-    folders = ["tabungan-masa-tua", "warisan-anak", "dana-pendidikan-anak",
-               "dana-kuliah-anak", "kesehatan", "masuk-rumah-sakit"]
-    return sum(1 for f in folders if (ROOT / f / "index.html").exists())
+    return sum(1 for f in ARTICLE_FOLDERS if (ROOT / f / "index.html").exists())
+
+
+def run_harness():
+    harness = ROOT / "tools" / "seo_check.py"
+    if not harness.exists():
+        return ["harness tidak ditemukan di " + str(harness)]
+    res = subprocess.run(
+        [sys.executable, str(harness)], cwd=ROOT, capture_output=True, text=True
+    )
+    return res.stdout.strip().splitlines()
+
 
 def main():
-    last_commit = git_last_commit()
-    now = time.time()
-    days_since = (now - last_commit) / 86400 if last_commit else 999
+    last = git_last_commit_ts()
+    days = (time.time() - last) / 86400 if last else 999
     articles = count_articles()
-    msg = f"AUDIT MINGGUAN — Artikel: {articles}/6 aktif. Commit terakhir: {days_since:.0f} hari lalu."
-    if days_since > 7 and articles == 0:
-        msg += " [REMINDER] Tidak ada artikel baru minggu ini — belum ada deploy konten baru."
-    elif days_since > 7:
-        msg += " [REMINDER] Sudah lebih dari 7 hari tanpa deploy artikel baru."
-    print(msg)
-    # Also run harness
-    harness = subprocess.run(
-        [sys.executable, "tools/seo_check.py"], cwd=ROOT, capture_output=True, text=True
-    )
-    for line in harness.stdout.strip().splitlines():
+    total = len(ARTICLE_FOLDERS)
+
+    print("AUDIT MINGGUAN tanyacalvin.com")
+    print(f"  Repo: {ROOT}")
+    print(f"  Artikel: {articles}/{total} folder aktif")
+    print(f"  Commit terakhir: {days:.0f} hari lalu")
+
+    if days > 7:
+        print("  [REMINDER] Sudah lebih dari 7 hari tanpa deploy artikel baru. "
+              "Cek job 'Terbitkan Artikel Mingguan' dan antrean content-queue.json.")
+
+    for line in run_harness():
         print(f"  {line}")
+
 
 if __name__ == "__main__":
     main()
