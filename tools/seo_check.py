@@ -20,6 +20,7 @@ PAGES = {
     "dana-kuliah-anak": ("dana-kuliah-anak/index.html", "kuliah", 600),
     "kesehatan": ("kesehatan/index.html", "kesehatan", 600),
     "masuk-rumah-sakit": ("masuk-rumah-sakit/index.html", "rumah sakit", 600),
+    "asuransi-jiwa-medan": ("asuransi-jiwa-medan/index.html", "asuransi jiwa medan", 600),
 }
 
 FOLDERS = [k for k in PAGES if k != "index.html"]
@@ -124,7 +125,7 @@ def main():
             for m in missing:
                 print(f"        - {m}/")
         else:
-            print("PASS  index.html — menautkan ke 6 halaman konten")
+            print(f"PASS  index.html — menautkan ke {len(FOLDERS)} halaman konten")
 
     for name, needle in (("sitemap.xml", "https://tanyacalvin.com/tabungan-masa-tua/"),
                          ("robots.txt", "Sitemap: https://tanyacalvin.com/sitemap.xml")):
