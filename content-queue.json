@@ -1,7 +1,7 @@
 [
   {
     "slug": "asuransi-jiwa-medan",
-    "h1": "Asuransi Jiwa di Medan: Perlindungan yang Tepat untuk Keluarga",
+    "h1": "Asuransi Jiwa Medan: Perlindungan yang Tepat untuk Keluarga",
     "keyword": "asuransi jiwa medan",
     "desc": "Pelajari cara memilih asuransi jiwa yang tepat untuk keluarga di Medan, bedanya produk tradisional dan unit link, serta cara memverifikasi agen.",
     "status": "published",
@@ -9,46 +9,82 @@
   },
   {
     "slug": "asuransi-pendidikan",
-    "h1": "Asuransi Pendidikan: Dana Sekolah yang Terlindungi",
+    "h1": "Asuransi Pendidikan di Medan: Cara Kerja dan Risiko yang Ditutup",
     "keyword": "asuransi pendidikan",
     "desc": "Pelajari bagaimana asuransi pendidikan melindungi rencana sekolah anak dari risiko yang tidak terduga.",
     "status": "published",
     "published_at": "2026-10-19"
   },
   {
-    "slug": "free-look-asuransi",
-    "h1": "Masa Free Look Asuransi: Apa Itu dan Bagaimana Menggunakannya",
-    "keyword": "free look asuransi",
-    "desc": "Pelajari apa itu masa free look, berapa lamanya, dan bagaimana membatalkan polis jika tidak sesuai."
-  },
-  {
     "slug": "cara-memilih-asuransi-jiwa",
-    "h1": "Cara Memilih Asuransi Jiwa untuk Keluarga Muda",
+    "h1": "Cara Memilih Asuransi Jiwa di Medan: Checklist dari Agennya Langsung",
     "keyword": "cara memilih asuransi jiwa",
-    "desc": "Pelajari langkah praktis memilih asuransi jiwa sesuai kebutuhan keluarga muda di Medan."
-  },
-  {
-    "slug": "dana-darurat-keluarga",
-    "h1": "Dana Darurat Keluarga: Berapa yang Cukup?",
-    "keyword": "dana darurat keluarga",
-    "desc": "Pelajari cara menghitung dana darurat yang cukup untuk keluarga, dan kenapa ini berbeda dari tabungan masa tua."
+    "geo": "Medan",
+    "intent": "informasional-komersial (mid-funnel, paling kuat untuk E-E-A-T)",
+    "target_query": "cara memilih asuransi jiwa medan",
+    "desc": "Urutan memilih asuransi jiwa untuk keluarga di Medan: tentukan kebutuhan lebih dulu, bandingkan produk tradisional dan unit link, lalu verifikasi agen dan isi polisnya.",
+    "angle": "Tulis dari sudut pandang agen: apa yang saya rekomendasikan ke klien di Medan, dan mana yang saya sarankan untuk ditunda. Suara personal, bukan definisi kamus.",
+    "status": "queued",
+    "prioritas": 1
   },
   {
     "slug": "asuransi-ibu-rumah-tangga",
-    "h1": "Asuransi untuk Ibu Rumah Tangga: Perlindungan yang Sering Dilupakan",
+    "h1": "Asuransi untuk Ibu Rumah Tangga di Medan: Perlindungan yang Sering Dilupakan",
     "keyword": "asuransi ibu rumah tangga",
-    "desc": "Pelajari kenapa ibu rumah tangga juga butuh perlindungan, dan bagaimana memilih produk yang tepat."
+    "geo": "Medan",
+    "intent": "informasional (segmen besar, kompetisi lokal rendah)",
+    "target_query": "asuransi ibu rumah tangga medan",
+    "desc": "Ibu rumah tangga tidak mencatat penghasilan, tapi hilangnya dia menghentikan pekerjaan perawatan yang nilainya besar. Ini cara menghitung proteksinya.",
+    "angle": "Frame lewat nilai pekerjaan domestik yang hilang, bukan lewat 'tidak punya gaji'. Jaga semua angka sebagai estimasi berlabel, bukan tagihan resmi.",
+    "status": "queued",
+    "prioritas": 2
+  },
+  {
+    "slug": "dana-darurat-keluarga",
+    "h1": "Dana Darurat Keluarga di Medan: Berapa Bulan Pengeluaran yang Cukup?",
+    "keyword": "dana darurat keluarga",
+    "geo": "Medan",
+    "intent": "informasional (traffic bersebelahan, pintu masuk ke proteksi)",
+    "target_query": "dana darurat keluarga medan",
+    "desc": "Cara menghitung dana darurat memakai biaya hidup keluarga di Medan, bedanya posisi dengan asuransi, dan mana yang perlu dibangun lebih dulu.",
+    "angle": "Pakai biaya hidup rumah tangga Medan sebagai dasar hitungan. Tegaskan dana darurat bukan pengganti proteksi, dan sebaliknya.",
+    "status": "queued",
+    "prioritas": 3
   },
   {
     "slug": "premi-asuransi-jiwa",
-    "h1": "Premi Asuransi Jiwa: Cara Menghitung dan Menyesuaikan",
+    "h1": "Premi Asuransi Jiwa: Apa yang Membuat Harganya Beda-Beda",
     "keyword": "premi asuransi jiwa",
-    "desc": "Pelajari cara menghitung premi asuransi jiwa, apa yang mempengaruhinya, dan bagaimana menyesuaikan dengan budget."
+    "geo": "nasional (tanpa geo-modifier)",
+    "intent": "komersial ( niat tinggi, paling sensitif YMYL)",
+    "target_query": "berapa premi asuransi jiwa",
+    "desc": "Faktor yang menentukan besar premi asuransi jiwa: usia, kesehatan, kebiasaan merokok, jenis pekerjaan, lama proteksi, dan besar uang pertanggungan.",
+    "angle": "JANGAN tampilkan angka premi spesifik. Bahas faktor pembentuk harga dan arahkan ke ilustrasi resmi lewat call center AIA 1500 980.",
+    "status": "queued",
+    "prioritas": 4
+  },
+  {
+    "slug": "free-look-asuransi",
+    "h1": "Masa Free Look Polis Asuransi: Hak Anda Setelah Tanda Tangan",
+    "keyword": "free look asuransi",
+    "geo": "nasional (sengaja tidak dilokalkan)",
+    "intent": "informasional (kompetisi hampir nol)",
+    "target_query": "free look period asuransi indonesia",
+    "desc": "Masa free look memberi waktu menilai polis setelah tanda tangan. Ini cara memanfaatkannya, apa saja yang dicek, dan akibatnya kalau polis dibatalkan.",
+    "angle": "Satu-satunya topik yang sengaja tanpa 'Medan' — keywordnya nasional dan kompetisinya rendah. Fokus ke mekanisme dan hak pemegang polis.",
+    "status": "queued",
+    "prioritas": 5
   },
   {
     "slug": "asuransi-kecelakaan",
-    "h1": "Asuransi Kecelakaan: Perlindungan Saat Risiko Terjadi",
+    "h1": "Asuransi Kecelakaan Kerja untuk UMKM Medan: Mana yang Wajib Dulu",
     "keyword": "asuransi kecelakaan",
-    "desc": "Pelajari manfaat asuransi kecelakaan, bedanya dengan asuransi jiwa, dan kapan membelinya."
+    "geo": "Medan",
+    "intent": "informasional (DITUNDA — tulis terakhir)",
+    "target_query": "asuransi kecelakaan kerja medan",
+    "desc": "Bedanya asuransi kecelakaan dengan asuransi jiwa, kapan keduanya dibutuhkan, dan cara menyusun prioritas proteksi untuk pekerja serta pemilik UMKM.",
+    "angle": "Tunda sampai 5 topik di atas menunjukkan sinyal di Search Console. Kalau ditulis, targetkan UMKM/pekerja Medan, bukan angle generik.",
+    "status": "queued-tunda",
+    "prioritas": 6
   }
 ]
