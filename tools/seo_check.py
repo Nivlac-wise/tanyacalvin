@@ -22,6 +22,7 @@ PAGES = {
     "masuk-rumah-sakit": ("masuk-rumah-sakit/index.html", "rumah sakit", 600),
     "asuransi-jiwa-medan": ("asuransi-jiwa-medan/index.html", "asuransi jiwa medan", 600),
     "asuransi-pendidikan": ("asuransi-pendidikan/index.html", "asuransi pendidikan", 600),
+    "tentang-calvin": ("tentang-calvin/index.html", "life planner", 500),
 }
 
 FOLDERS = [k for k in PAGES if k != "index.html"]

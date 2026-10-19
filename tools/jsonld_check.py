@@ -8,6 +8,7 @@ REPO = pathlib.Path("/Users/Hau/WORK/Tanyacalvin/tanyacalvin")
 PAGES = [
     "tabungan-masa-tua", "warisan-anak", "dana-pendidikan-anak", "dana-kuliah-anak",
     "kesehatan", "masuk-rumah-sakit", "asuransi-jiwa-medan", "asuransi-pendidikan",
+    "tentang-calvin",
 ]
 fails, ok = [], []
 

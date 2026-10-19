@@ -25,6 +25,7 @@ SPEC = {
     "masuk-rumah-sakit":   {"h1_kw": "rumah sakit",         "ban_in_title_h1": []},
     "asuransi-jiwa-medan": {"h1_kw": "asuransi jiwa medan", "ban_in_title_h1": []},
     "asuransi-pendidikan": {"h1_kw": "asuransi pendidikan", "ban_in_title_h1": []},
+    "tentang-calvin":    {"h1_kw": "life planner",         "ban_in_title_h1": []},
 }
 
 def title_of(h):
