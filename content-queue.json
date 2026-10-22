@@ -24,7 +24,8 @@
     "target_query": "cara memilih asuransi jiwa medan",
     "desc": "Urutan memilih asuransi jiwa untuk keluarga di Medan: tentukan kebutuhan lebih dulu, bandingkan produk tradisional dan unit link, lalu verifikasi agen dan isi polisnya.",
     "angle": "Tulis dari sudut pandang agen: apa yang saya rekomendasikan ke klien di Medan, dan mana yang saya sarankan untuk ditunda. Suara personal, bukan definisi kamus.",
-    "status": "queued",
+    "status": "published",
+    "published_at": "2026-10-22",
     "prioritas": 1
   },
   {
