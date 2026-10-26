@@ -27,6 +27,7 @@ SPEC = {
     "asuransi-pendidikan": {"h1_kw": "asuransi pendidikan", "ban_in_title_h1": []},
     "cara-memilih-asuransi-jiwa": {"h1_kw": "cara memilih asuransi jiwa", "ban_in_title_h1": []},
     "tentang-calvin":    {"h1_kw": "life planner",         "ban_in_title_h1": []},
+    "kontak":            {"h1_kw": "whatsapp",             "ban_in_title_h1": []},
 }
 
 def title_of(h):

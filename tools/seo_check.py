@@ -24,6 +24,7 @@ PAGES = {
     "asuransi-pendidikan": ("asuransi-pendidikan/index.html", "asuransi pendidikan", 600),
     "cara-memilih-asuransi-jiwa": ("cara-memilih-asuransi-jiwa/index.html", "cara memilih asuransi jiwa", 600),
     "tentang-calvin": ("tentang-calvin/index.html", "life planner", 500),
+    "kontak": ("kontak/index.html", "whatsapp", 500),
 }
 
 FOLDERS = [k for k in PAGES if k != "index.html"]
@@ -131,6 +132,7 @@ def main():
             print(f"PASS  index.html — menautkan ke {len(FOLDERS)} halaman konten")
 
     for name, needle in (("sitemap.xml", "https://tanyacalvin.com/tabungan-masa-tua/"),
+                         ("sitemap.xml", "https://tanyacalvin.com/kontak/"),
                          ("robots.txt", "Sitemap: https://tanyacalvin.com/sitemap.xml")):
         p = ROOT / name
         if not p.exists() or needle not in p.read_text(encoding="utf-8"):

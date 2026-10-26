@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tanyacalvin.com/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tanyacalvin.com/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tanyacalvin.com/kontak/</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tanyacalvin.com/tabungan-masa-tua/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tanyacalvin.com/warisan-anak/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tanyacalvin.com/dana-pendidikan-anak/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -10,10 +11,5 @@
   <url><loc>https://tanyacalvin.com/asuransi-jiwa-medan/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tanyacalvin.com/asuransi-pendidikan/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tanyacalvin.com/cara-memilih-asuransi-jiwa/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url>
-    <loc>https://tanyacalvin.com/tentang-calvin/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://tanyacalvin.com/tentang-calvin/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
