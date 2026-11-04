@@ -25,7 +25,7 @@ REPO = pathlib.Path(__file__).resolve().parent.parent
 CANON = "https://tanyacalvin.com"
 
 # halaman yang TIDAK punya Article (pakai tipe lain) -> aturan headline dilewati
-NON_ARTICLE = {"tentang-calvin", "kontak", "index.html"}
+NON_ARTICLE = {"tentang-calvin", "kontak", "index.html", "konten-aia"}
 
 fails, oks = [], []
 
